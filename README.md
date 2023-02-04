@@ -3,10 +3,11 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Here's a package called example made with litr where both its pkgdown website and its bookdown are nicely rendered.
+Here's an example package made with litr where both its pkgdown website and its bookdown are nicely rendered.
 
-Its pkgdown website: https://jacobbien.github.io/example/
-Its bookdown: https://jacobbien.github.io/example/create/
+- Its pkgdown website: https://jacobbien.github.io/example/
+
+- Its bookdown: https://jacobbien.github.io/example/create/
 
 To create this, we ran the following from an R console:
 

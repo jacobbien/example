@@ -16,6 +16,24 @@
     <loc>/create/404.html</loc>
   </url>
   <url>
+    <loc>/create/_book/404.html</loc>
+  </url>
+  <url>
+    <loc>/create/_book/conclude.html</loc>
+  </url>
+  <url>
+    <loc>/create/_book/generalization-to-other-greetings.html</loc>
+  </url>
+  <url>
+    <loc>/create/_book/index.html</loc>
+  </url>
+  <url>
+    <loc>/create/_book/package-setup.html</loc>
+  </url>
+  <url>
+    <loc>/create/_book/the-basics-of-saying-hello.html</loc>
+  </url>
+  <url>
     <loc>/create/conclude.html</loc>
   </url>
   <url>

@@ -13,7 +13,7 @@ To create this, we ran the following from an R console:
 
 ``` r
 litr::render("index.Rmd")
-fs::dir_copy("_book", file.path("docs", "create"))
+fs::dir_copy("_book", "docs/create", overwrite = TRUE)
 fs::dir_delete("_book")
 ```
 

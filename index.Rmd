@@ -13,13 +13,11 @@ documentclass: book
 
 # Introduction
 
-To make this bookdown and put its output in the docs directory, I did the following from R:
+I nicely rendered version of this bookdown is available [here](https://jacobbien.github.io/example/create/).
 
-```{r, eval = FALSE}
-litr::render("index.Rmd")
-fs::dir_copy("_book", file.path("docs", "create"))
-fs::dir_delete("_book")
-```
+The pkgdown website for this package is available [here](https://jacobbien.github.io/example/).
+
+
 
 # Package setup
 

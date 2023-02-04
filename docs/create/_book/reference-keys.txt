@@ -1,0 +1,7 @@
+introduction
+package-setup
+the-basics-of-saying-hello
+generalization-to-other-greetings
+conclude
+add-readme
+add-pkgdown

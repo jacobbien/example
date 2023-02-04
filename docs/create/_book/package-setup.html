@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Conclusion | Creating the example R package</title>
-  <meta name="description" content="5 Conclusion | Creating the example R package" />
+  <title>2 Package setup | Creating the example R package</title>
+  <meta name="description" content="2 Package setup | Creating the example R package" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Conclusion | Creating the example R package" />
+  <meta property="og:title" content="2 Package setup | Creating the example R package" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Conclusion | Creating the example R package" />
+  <meta name="twitter:title" content="2 Package setup | Creating the example R package" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generalization-to-other-greetings.html"/>
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="the-basics-of-saying-hello.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -158,60 +158,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conclude" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Conclusion<a href="conclude.html#conclude" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>When you are done defining the package, it remains to convert the Roxygen to documentation.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="conclude.html#cb9-1" aria-hidden="true" tabindex="-1"></a>litr<span class="sc">::</span><span class="fu">document</span>() <span class="co"># &lt;-- use instead of devtools::document()</span></span></code></pre></div>
-<pre><code>## ℹ Updating example documentation
-## ℹ Loading example
-## Writing &#39;NAMESPACE&#39;
-## Writing &#39;example-package.Rd&#39;
-## Writing &#39;say_hello.Rd&#39;</code></pre>
-<p>You can also add some extra things to your package here if you like, such as a README, some vignettes, a <a href="https://pkgdown.r-lib.org/">pkgdown</a> site, etc. See <a href="https://github.com/jacobbien/litr-project/tree/main/examples/make-an-r-package-with-extras">here</a> for an example of how to do this with <code>litr</code>.</p>
-<div id="add-readme" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Add README<a href="conclude.html#add-readme" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="conclude.html#cb11-1" aria-hidden="true" tabindex="-1"></a>litr<span class="sc">::</span><span class="fu">add_readme</span>(<span class="st">&quot;../source-files/README.Rmd&quot;</span>)</span></code></pre></div>
-<pre><code>## ✔ Writing &#39;README.Rmd&#39;
-## ✔ Adding &#39;^README\\.Rmd$&#39; to &#39;.Rbuildignore&#39;
-## ✔ Creating &#39;.git/hooks/&#39;
-## ✔ Writing &#39;.git/hooks/pre-commit&#39;</code></pre>
-</div>
-<div id="add-pkgdown" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Add pkgdown<a href="conclude.html#add-pkgdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="conclude.html#cb13-1" aria-hidden="true" tabindex="-1"></a>litr<span class="sc">::</span><span class="fu">add_pkgdown</span>(<span class="st">&quot;../source-files/_pkgdown.yml&quot;</span>)</span></code></pre></div>
-<pre><code>## ✔ Adding &#39;^_pkgdown\\.yml$&#39;, &#39;^docs$&#39;, &#39;^pkgdown$&#39; to &#39;.Rbuildignore&#39;</code></pre>
-<pre><code>## -- Installing package into temporary library -----------------------------------
-## == Building pkgdown site =======================================================
-## Reading from: &#39;/Users/jacobbien/Downloads/example/example&#39;
-## Writing to:   &#39;/Users/jacobbien/Downloads/example/docs&#39;
-## -- Initialising site -----------------------------------------------------------
-## Copying &#39;../../../Library/R/arm64/4.2/library/pkgdown/BS5/assets/link.svg&#39; to &#39;link.svg&#39;
-## Copying &#39;../../../Library/R/arm64/4.2/library/pkgdown/BS5/assets/pkgdown.js&#39; to &#39;pkgdown.js&#39;
-## -- Building home ---------------------------------------------------------------
-## Writing &#39;authors.html&#39;
-## Reading &#39;LICENSE.md&#39;
-## Writing &#39;LICENSE.html&#39;
-## Writing &#39;LICENSE-text.html&#39;
-## Writing &#39;404.html&#39;
-## -- Building function reference -------------------------------------------------
-## Writing &#39;reference/index.html&#39;
-## Reading &#39;man/example-package.Rd&#39;
-## Writing &#39;reference/example-package.html&#39;
-## Reading &#39;man/say_hello.Rd&#39;
-## Writing &#39;reference/say_hello.html&#39;
-## Writing &#39;sitemap.xml&#39;
-## -- Building search index -------------------------------------------------------
-## == DONE ========================================================================</code></pre>
-
-</div>
+<div id="package-setup" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Package setup<a href="package-setup.html#package-setup" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Every R package needs a DESCRIPTION file, so we start by specifying this information:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="package-setup.html#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(</span>
+<span id="cb2-2"><a href="package-setup.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb2-3"><a href="package-setup.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">fields =</span> <span class="fu">list</span>(</span>
+<span id="cb2-4"><a href="package-setup.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Package =</span> params<span class="sc">$</span>package_name,</span>
+<span id="cb2-5"><a href="package-setup.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Version =</span> <span class="st">&quot;0.0.0.9000&quot;</span>,</span>
+<span id="cb2-6"><a href="package-setup.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Title =</span> <span class="st">&quot;A Package Defined in a Bookdown&quot;</span>,</span>
+<span id="cb2-7"><a href="package-setup.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Description =</span> <span class="st">&quot;This package uses litr to define an R package through writing a bookdown.&quot;</span>,</span>
+<span id="cb2-8"><a href="package-setup.html#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Authors@R</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">person</span>(</span>
+<span id="cb2-9"><a href="package-setup.html#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">given =</span> <span class="st">&quot;First&quot;</span>,</span>
+<span id="cb2-10"><a href="package-setup.html#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="st">&quot;Last&quot;</span>,</span>
+<span id="cb2-11"><a href="package-setup.html#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">email =</span> <span class="st">&quot;you@gmail.com&quot;</span>,</span>
+<span id="cb2-12"><a href="package-setup.html#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>)</span>
+<span id="cb2-13"><a href="package-setup.html#cb2-13" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb2-14"><a href="package-setup.html#cb2-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-15"><a href="package-setup.html#cb2-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-16"><a href="package-setup.html#cb2-16" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_mit_license</span>(<span class="at">copyright_holder =</span> <span class="st">&quot;F. Last&quot;</span>)</span></code></pre></div>
+<p>Although it’s not required, it can be nice to add some package-level documentation. This is what will show up when someone types <code>package?&lt;your-package-name&gt;</code> in the console.</p>
+<pre class="package_doc"><code>#&#39; A Package Defined in a Bookdown
+#&#39;
+#&#39; This package uses `litr` to define an R package through writing a `bookdown`.
+#&#39; 
+#&#39; @docType package</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="generalization-to-other-greetings.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-basics-of-saying-hello.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

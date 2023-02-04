@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Conclusion | Creating the example R package</title>
-  <meta name="description" content="5 Conclusion | Creating the example R package" />
+  <title>3 The basics of saying hello | Creating the example R package</title>
+  <meta name="description" content="3 The basics of saying hello | Creating the example R package" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Conclusion | Creating the example R package" />
+  <meta property="og:title" content="3 The basics of saying hello | Creating the example R package" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Conclusion | Creating the example R package" />
+  <meta name="twitter:title" content="3 The basics of saying hello | Creating the example R package" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generalization-to-other-greetings.html"/>
-
+<link rel="prev" href="package-setup.html"/>
+<link rel="next" href="generalization-to-other-greetings.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -158,60 +158,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conclude" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Conclusion<a href="conclude.html#conclude" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>When you are done defining the package, it remains to convert the Roxygen to documentation.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="conclude.html#cb9-1" aria-hidden="true" tabindex="-1"></a>litr<span class="sc">::</span><span class="fu">document</span>() <span class="co"># &lt;-- use instead of devtools::document()</span></span></code></pre></div>
-<pre><code>## ℹ Updating example documentation
-## ℹ Loading example
-## Writing &#39;NAMESPACE&#39;
-## Writing &#39;example-package.Rd&#39;
-## Writing &#39;say_hello.Rd&#39;</code></pre>
-<p>You can also add some extra things to your package here if you like, such as a README, some vignettes, a <a href="https://pkgdown.r-lib.org/">pkgdown</a> site, etc. See <a href="https://github.com/jacobbien/litr-project/tree/main/examples/make-an-r-package-with-extras">here</a> for an example of how to do this with <code>litr</code>.</p>
-<div id="add-readme" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Add README<a href="conclude.html#add-readme" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="conclude.html#cb11-1" aria-hidden="true" tabindex="-1"></a>litr<span class="sc">::</span><span class="fu">add_readme</span>(<span class="st">&quot;../source-files/README.Rmd&quot;</span>)</span></code></pre></div>
-<pre><code>## ✔ Writing &#39;README.Rmd&#39;
-## ✔ Adding &#39;^README\\.Rmd$&#39; to &#39;.Rbuildignore&#39;
-## ✔ Creating &#39;.git/hooks/&#39;
-## ✔ Writing &#39;.git/hooks/pre-commit&#39;</code></pre>
-</div>
-<div id="add-pkgdown" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Add pkgdown<a href="conclude.html#add-pkgdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="conclude.html#cb13-1" aria-hidden="true" tabindex="-1"></a>litr<span class="sc">::</span><span class="fu">add_pkgdown</span>(<span class="st">&quot;../source-files/_pkgdown.yml&quot;</span>)</span></code></pre></div>
-<pre><code>## ✔ Adding &#39;^_pkgdown\\.yml$&#39;, &#39;^docs$&#39;, &#39;^pkgdown$&#39; to &#39;.Rbuildignore&#39;</code></pre>
-<pre><code>## -- Installing package into temporary library -----------------------------------
-## == Building pkgdown site =======================================================
-## Reading from: &#39;/Users/jacobbien/Downloads/example/example&#39;
-## Writing to:   &#39;/Users/jacobbien/Downloads/example/docs&#39;
-## -- Initialising site -----------------------------------------------------------
-## Copying &#39;../../../Library/R/arm64/4.2/library/pkgdown/BS5/assets/link.svg&#39; to &#39;link.svg&#39;
-## Copying &#39;../../../Library/R/arm64/4.2/library/pkgdown/BS5/assets/pkgdown.js&#39; to &#39;pkgdown.js&#39;
-## -- Building home ---------------------------------------------------------------
-## Writing &#39;authors.html&#39;
-## Reading &#39;LICENSE.md&#39;
-## Writing &#39;LICENSE.html&#39;
-## Writing &#39;LICENSE-text.html&#39;
-## Writing &#39;404.html&#39;
-## -- Building function reference -------------------------------------------------
-## Writing &#39;reference/index.html&#39;
-## Reading &#39;man/example-package.Rd&#39;
-## Writing &#39;reference/example-package.html&#39;
-## Reading &#39;man/say_hello.Rd&#39;
-## Writing &#39;reference/say_hello.html&#39;
-## Writing &#39;sitemap.xml&#39;
-## -- Building search index -------------------------------------------------------
-## == DONE ========================================================================</code></pre>
-
-</div>
+<div id="the-basics-of-saying-hello" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> The basics of saying hello<a href="the-basics-of-saying-hello.html#the-basics-of-saying-hello" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Let’s define a function for our R package:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="the-basics-of-saying-hello.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Say hello to someone</span></span>
+<span id="cb4-2"><a href="the-basics-of-saying-hello.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
+<span id="cb4-3"><a href="the-basics-of-saying-hello.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param name Name of a person</span></span>
+<span id="cb4-4"><a href="the-basics-of-saying-hello.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param exclamation Whether to include an exclamation mark</span></span>
+<span id="cb4-5"><a href="the-basics-of-saying-hello.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export </span></span>
+<span id="cb4-6"><a href="the-basics-of-saying-hello.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span id='say_hello'>say_hello</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(name, <span class="at">exclamation =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb4-7"><a href="the-basics-of-saying-hello.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="st">&quot;Hello &quot;</span>, name, <span class="fu">ifelse</span>(exclamation, <span class="st">&quot;!&quot;</span>, <span class="st">&quot;.&quot;</span>))</span>
+<span id="cb4-8"><a href="the-basics-of-saying-hello.html#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Code chunks whose first line starts with <code>#'</code> are added to the package.</p>
+<p>We can try running it.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="the-basics-of-saying-hello.html#cb5-1" aria-hidden="true" tabindex="-1"></a><a href='the-basics-of-saying-hello.html#say_hello'>say_hello</a>(<span class="st">&quot;Jacob&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Hello Jacob!&quot;</code></pre>
+<p>That code chunk does not start with <code>#'</code>, so it is not added to the package.</p>
+<p>Let’s write some tests to make sure the function behaves as desired:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-basics-of-saying-hello.html#cb7-1" aria-hidden="true" tabindex="-1"></a>testthat<span class="sc">::</span><span class="fu">test_that</span>(<span class="st">&quot;say_hello works&quot;</span>, {</span>
+<span id="cb7-2"><a href="the-basics-of-saying-hello.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  testthat<span class="sc">::</span><span class="fu">expect_equal</span>(<a href='the-basics-of-saying-hello.html#say_hello'>say_hello</a>(<span class="st">&quot;Jacob&quot;</span>), <span class="st">&quot;Hello Jacob!&quot;</span>)</span>
+<span id="cb7-3"><a href="the-basics-of-saying-hello.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  testthat<span class="sc">::</span><span class="fu">expect_equal</span>(<a href='the-basics-of-saying-hello.html#say_hello'>say_hello</a>(<span class="st">&quot;Jacob&quot;</span>, <span class="at">exclamation =</span> <span class="cn">FALSE</span>), <span class="st">&quot;Hello Jacob.&quot;</span>)</span>
+<span id="cb7-4"><a href="the-basics-of-saying-hello.html#cb7-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<pre><code>## Test passed 🌈</code></pre>
+<p>Code chunks that have one or more lines starting with <code>test_that(</code> (or <code>testthat::test_that(</code>) are added to the package as tests.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="generalization-to-other-greetings.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="package-setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="generalization-to-other-greetings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

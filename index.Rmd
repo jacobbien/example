@@ -13,7 +13,7 @@ documentclass: book
 
 # Introduction
 
-I nicely rendered version of this bookdown is available [here](https://jacobbien.github.io/example/create/).
+A nicely rendered version of this bookdown is available [here](https://jacobbien.github.io/example/create/).
 
 The pkgdown website for this package is available [here](https://jacobbien.github.io/example/).
 

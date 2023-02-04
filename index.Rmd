@@ -1,0 +1,119 @@
+---
+title: "Creating the ``r params$package_name`` R package"
+author: "Jacob Bien"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+knit: litr::render
+output: litr::litr_gitbook
+params:
+  package_name: "example" # <-- change this to your package name
+  package_parent_dir: "." # <-- relative to this file's location
+documentclass: book
+---
+
+# Introduction
+
+To make this bookdown and put its output in the docs directory, I did the following from R:
+
+```{r, eval = FALSE}
+litr::render("index.Rmd")
+fs::dir_copy("_book", file.path("docs", "create"))
+fs::dir_delete("_book")
+```
+
+# Package setup
+
+Every R package needs a DESCRIPTION file, so we start by specifying this information:
+
+```{r package-setup, message=FALSE, results='hide'}
+usethis::create_package(
+  path = ".",
+  fields = list(
+    Package = params$package_name,
+    Version = "0.0.0.9000",
+    Title = "A Package Defined in a Bookdown",
+    Description = "This package uses litr to define an R package through writing a bookdown.",
+    `Authors@R` = person(
+      given = "First",
+      family = "Last",
+      email = "you@gmail.com",
+      role = c("aut", "cre")
+      )
+  )
+)
+usethis::use_mit_license(copyright_holder = "F. Last")
+```
+
+Although it's not required, it can be nice to add some package-level documentation.  This is what will show up when someone types `package?<your-package-name>` in the console.
+
+```{package_doc}
+#' A Package Defined in a Bookdown
+#'
+#' This package uses `litr` to define an R package through writing a `bookdown`.
+#' 
+#' @docType package
+```
+
+# The basics of saying hello
+
+Let's define a function for our R package:
+
+```{r}
+#' Say hello to someone
+#' 
+#' @param name Name of a person
+#' @param exclamation Whether to include an exclamation mark
+#' @export 
+say_hello <- function(name, exclamation = TRUE) {
+  paste0("Hello ", name, ifelse(exclamation, "!", "."))
+}
+```
+
+Code chunks whose first line starts with `#'` are added to the package.
+
+We can try running it.
+
+```{r}
+say_hello("Jacob")
+```
+
+That code chunk does not start with `#'`, so it is not added to the package.
+
+Let's write some tests to make sure the function behaves as desired:
+
+```{r}
+testthat::test_that("say_hello works", {
+  testthat::expect_equal(say_hello("Jacob"), "Hello Jacob!")
+  testthat::expect_equal(say_hello("Jacob", exclamation = FALSE), "Hello Jacob.")
+})
+```
+
+Code chunks that have one or more lines starting with `test_that(` (or `testthat::test_that(`) are added to the package as tests.
+
+# Generalization to other greetings
+
+We can now get fancier and define more functions across as many .Rmd files as we like.  Hyperlinks work across different .Rmd files.  For example, you can click on `say_hello()` and it will bring you to the definition in the previous chapter.
+
+# Conclusion {#conclude}
+
+When you are done defining the package, it remains to convert the Roxygen to documentation.
+
+```{r}
+litr::document() # <-- use instead of devtools::document()
+```
+
+You can also add some extra things to your package here if you like, such as a README, some vignettes, a [pkgdown](https://pkgdown.r-lib.org/) site, etc.  See [here](https://github.com/jacobbien/litr-project/tree/main/examples/make-an-r-package-with-extras) for an example of how to do this with `litr`.
+
+
+## Add README
+
+```{r}
+litr::add_readme("../source-files/README.Rmd")
+```
+
+## Add pkgdown
+
+
+```{r}
+litr::add_pkgdown("../source-files/_pkgdown.yml")
+```
